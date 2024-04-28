@@ -1,2 +1,1 @@
-# Service-Booking-System
-It's a simple servise booking system which is used to book any services given
+This is Simple Service Providing System for Home appliances and home services

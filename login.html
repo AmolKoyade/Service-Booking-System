@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="illustration.jpeg" alt="Illustration" class="illustration">
+        <h1>User Login</h1>
+        <form id="login-form">
+            <input type="text" id="loginUsername" placeholder="User Name"><br>
+            <input type="password" id="loginPassword" placeholder="Password"><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+
+    <script>
+        // Assuming login success, redirect to services page
+        // Replace this with your actual login success logic
+        function loginSuccess() {
+            window.location.href = "services.html";
+        }
+    </script>
+</body>
+</html>
