@@ -210,6 +210,41 @@ if (!empty($username) || !empty($email) || !empty($password) || !empty($address)
     acknowledgmentContainer.style.display = 'block';
   });
 
+
+        5. unix
+
+        #!/bin/bash
+
+# Function to generate a random 7-digit number
+generate_random_id() {
+    echo $((RANDOM % 9000000 + 1000000))
+}
+
+# Function to register a customer
+register_customer() {
+    echo "Please enter the following information:"
+    read -p "User Name (Max 50 characters): " username
+    read -p "Email: " email
+    read -p "Password (Max 30 characters): " password
+    read -p "Address (Max 100 characters): " address
+    read -p "Contact Number (Max 10 characters): " contact_number
+
+    # Generate a random User ID
+    user_id=$(generate_random_id)
+
+    # Display registration acknowledgment message
+    echo "Customer Registration is successful"
+    echo "User ID: $user_id"
+    echo "User Name: $username"
+    echo "Email: $email"
+    echo "Address: $address"
+    echo "Contact Number: $contact_number"
+}
+
+# Main script
+register_customer
+
+
         -->
     </body>
 </html>
