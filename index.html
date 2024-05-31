@@ -20,5 +20,112 @@
         </div>
 
         <script src="script.js"></script>
+
+        <!--
+
+        1. registration 
+
+        <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <img src="illustration.jpeg" alt="Illustration"
+                class="illustration">
+            <h1>User Registration</h1>
+
+            <form id="registration-form" action="insert.php" method="post">
+                <input type="text" id="username" placeholder="User Name"
+                    name="username" required><br>
+                <input type="email" id="email" name="email" placeholder="Email"
+                    required><br>
+                <input type="password" id="password" placeholder="Password"
+                    name="password" required><br>
+                <textarea id="address" placeholder="Address"
+                    name="address" required></textarea><br>
+                <input type="text" id="contact" placeholder="Contact Number"
+                    name="number" required><br>
+                <button type="submit">Register</button>
+            </form>
+            <p id="registration-message"></p>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="registration.js"></script>
+    </body>
+</html>
+
+        2. registartion1
+
+        <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="registration-container">
+            <h2>Registration</h2>
+            <form action="#" method="post">
+                <input type="text" name="fullname" placeholder="Full Name"
+                    required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password"
+                    required>
+                <input type="password" name="confirm_password"
+                    placeholder="Confirm Password" required>
+                <input type="submit" value="Register">
+            </form>
+            <button onclick="location.href='home.html'"
+                class="login-btn">Already have an account? Login</button>
+        </div>
+    </body>
+</html>
+
+
+        3. table 1 
+
+        <?php 
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $address = $_POST['address'];
+    $number = $_POST['number'];
+    
+    $conn = new mysqli('localhost', 'root', '', 'test');
+
+    if($conn->connect_error) {
+    
+    die('Connection Failed: '.$conn->connect_error);
+    
+    }else{
+    
+    $stmt = $conn->prepare("insert into register (username, email, password, address, number) values(?, ?, ?, ?, ?)");
+    
+    $stmt->bind_param("ssssi", $username, $email, $password, $address, $number);
+    
+    $stmt->execute();
+    
+    echo "registration Successfully...";
+    
+    $stmt->close();
+    
+    $conn->close();
+    }
+
+?>
+
+
+        4. table 2
+        
+
+        -->
     </body>
 </html>
