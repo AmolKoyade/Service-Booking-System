@@ -18,3 +18,164 @@
         </div>
     </body>
 </html>
+
+<!-- 
+1. registration info
+
+
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[][] registrations = new String[10][5]; // Assuming maximum 10 registrations
+        int count = 0; // To keep track of the number of registrations
+
+        while (true) {
+            System.out.print("Enter User Name (Max 50 characters) or type 'done' to finish: ");
+            String userName = scanner.nextLine();
+            if (userName.equalsIgnoreCase("done")) {
+                break; // Break the loop if 'done' is entered
+            }
+
+            System.out.print("Enter Email: ");
+            String email = scanner.nextLine();
+
+            System.out.print("Enter Password (Max 30 characters): ");
+            String password = scanner.nextLine();
+
+            System.out.print("Enter Address (Max 100 characters): ");
+            String address = scanner.nextLine();
+
+            System.out.print("Enter Contact Number (10 digits): ");
+            String contactNumber = scanner.nextLine();
+
+            registrations[count][0] = userName;
+            registrations[count][1] = email;
+            registrations[count][2] = "*".repeat(password.length());
+            registrations[count][3] = address;
+            registrations[count][4] = contactNumber;
+
+            count++;
+        }
+
+        if (count > 0) {
+            System.out.println("\nCustomer Registration Details:");
+            System.out.println("----------------------------------------------");
+            System.out.println("User Name\tEmail\t\tPassword\tAddress\t\tContact Number");
+            System.out.println("----------------------------------------------");
+            for (int i = 0; i < count; i++) {
+                System.out.printf(
+                        registrations[i][0]+"\t\t"+ registrations[i][1]+"\t\t"+ registrations[i][2]+"\t\t"+ registrations[i][3]+"\t\t"+ registrations[i][4]);
+                System.out.println("");        
+            }
+            System.out.println("");
+            System.out.println("----------------------------------------------");
+
+            System.out.println("\nCustomer Registration is successful");
+        } else {
+            System.out.println("No registrations made.");
+        }
+    }
+}
+
+
+
+
+
+
+
+2. login 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        // Prompt for login ID
+        System.out.print("Enter Login ID: ");
+        String loginIdInput = scanner.nextLine();
+
+        // Prompt for password
+        System.out.print("Enter Password: ");
+        String passwordInput = scanner.nextLine();
+
+            System.out.println("\nLogin Successful!");
+    }
+}
+
+
+
+
+
+
+
+
+
+3. services info
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[][] registrations = new String[10][4]; // Assuming maximum 10 registrations
+        int count = 0; // To keep track of the number of registrations
+
+        while (true) {
+            System.out.print("Enter Date (MM/DD/YYYY) or type 'done' to finish: ");
+            String date = scanner.nextLine();
+            if (date.equalsIgnoreCase("done")) {
+                break; // Break the loop if 'done' is entered
+            }
+
+            System.out.print("Enter Address (Max 100 characters): ");
+            String address = scanner.nextLine();
+
+            System.out.print("Enter Vendor (vendor1, vendor2, vendor3): ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter Amount: ");
+            String amount = scanner.nextLine();
+
+            registrations[count][0] = date;
+            registrations[count][1] = address;
+            registrations[count][2] = vendor;
+            registrations[count][3] = amount;
+
+            count++;
+        }
+
+        if (count > 0) {
+            System.out.println("\nCustomer Registration Details:");
+            System.out.println("----------------------------------------------");
+            System.out.println("Date\t\tAddress\t\tVendor\t\tAmount");
+            System.out.println("----------------------------------------------");
+            for (int i = 0; i < count; i++) {
+                System.out.printf(
+                        registrations[i][0]+"\t\t\t"+registrations[i][1]+"\t\t\t"+registrations[i][2]+"\t\t\t"+registrations[i][3]);
+                        System.out.println("");
+            }
+            System.out.println("----------------------------------------------");
+
+            System.out.println("\nCustomer Registration is successful");
+        } else {
+            System.out.println("No registrations made.");
+        }
+    }
+}
+
+
+
+-->
