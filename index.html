@@ -245,6 +245,73 @@ register_customer() {
 register_customer
 
 
+
+
+
+
+        6. Java
+
+
+        import java.util.Random;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class CustomerRegistration {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int userId = generateUserId(random);
+        System.out.println("Generated User ID: " + userId);
+
+        String userName = getInput(scanner, "Enter User Name (Max 50 characters): ", 50, false, false);
+        String email = getInput(scanner, "Enter Email: ", 0, true, false);
+        String password = getInput(scanner, "Enter Password (Max 30 characters): ", 30, false, false);
+        String address = getInput(scanner, "Enter Address (Max 100 characters): ", 100, false, false);
+        String contactNumber = getInput(scanner, "Enter Contact Number (10 digits): ", 10, false, true);
+
+        System.out.println("\nCustomer Registration Details:");
+        System.out.println("User ID: " + userId);
+        System.out.println("User Name: " + userName);
+        System.out.println("Email: " + email);
+        System.out.println("Password: " + "*".repeat(password.length()));
+        System.out.println("Address: " + address);
+        System.out.println("Contact Number: " + contactNumber);
+
+        System.out.println("\nCustomer Registration is successful");
+    }
+
+    private static int generateUserId(Random random) {
+        return 1000000 + random.nextInt(9000000);
+    }
+
+    private static String getInput(Scanner scanner, String prompt, int maxLength, boolean isEmail, boolean isContact) {
+        while (true) {
+            System.out.print(prompt);
+            String input = scanner.nextLine();
+
+            if (maxLength > 0 && input.length() > maxLength) {
+                System.out.println("Input exceeds maximum length of " + maxLength + ". Please try again.");
+            } else if (isEmail && !isValidEmail(input)) {
+                System.out.println("Invalid email format. Please try again.");
+            } else if (isContact && (!isValidContact(input))) {
+                System.out.println("Contact number must be exactly 10 digits. Please try again.");
+            } else {
+                return input;
+            }
+        }
+    }
+
+    private static boolean isValidEmail(String email) {
+        return Pattern.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", email);
+    }
+
+    private static boolean isValidContact(String contact) {
+        return contact.matches("\\d{10}");
+    }
+}
+
         -->
     </body>
 </html>
