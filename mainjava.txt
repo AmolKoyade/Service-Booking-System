@@ -1,0 +1,207 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String registeredUsername = null;
+        String registeredPassword = null;
+        boolean loggedIn = false;
+        boolean serviceSelected = false;
+        boolean serviceSelectedd = false;
+
+        while (true) {
+            if (!loggedIn) {
+                System.out.println("Choose an option:");
+                System.out.println("1. Register");
+                System.out.println("2. Login");
+                System.out.println("3. Exit");
+
+                int option = scanner.nextInt();
+                scanner.nextLine(); // Consume newline character
+
+                switch (option) {
+                    case 1:
+                        System.out.println("Enter username:");
+                        registeredUsername = scanner.nextLine();
+                        System.out.println("Enter Email:");
+                        String email = scanner.nextLine();
+                        System.out.println("Enter Password:");
+                        registeredPassword = scanner.nextLine();
+                        System.out.println("Enter Address:");
+                        String address = scanner.nextLine();
+                        System.out.println("Enter contact Number:");
+                        String contactNumber = scanner.nextLine();
+                        System.out.println("User registered successfully!");
+                        break;
+                    case 2:
+                        if (registeredUsername == null || registeredPassword == null) {
+                            System.out.println("No user registered yet. Please register first.");
+                            break;
+                        }
+                        System.out.println("Enter username:");
+                        String loginUsername = scanner.nextLine();
+                        System.out.println("Enter password:");
+                        String loginPassword = scanner.nextLine();
+                        if (loginUsername.equalsIgnoreCase(registeredUsername) && loginPassword.equalsIgnoreCase(registeredPassword)) {
+                            loggedIn = true;
+                            System.out.println("Login successful!");
+                        } else {
+                            System.out.println("Invalid username or password.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Exiting...");
+                        scanner.close();
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please choose again.");
+                }
+            } else {
+                if (!serviceSelected) {
+                    System.out.println("Choose the Services:");
+                    System.out.println("1. AC and Appliances Repair");
+                    System.out.println("2. House Cleaning");
+                    System.out.println("3. Vehicle Repair Services");
+                    System.out.println("4. Product Pickup and Drop");
+                    System.out.println("5. Logout");
+
+                    int serviceOption = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
+
+                    switch (serviceOption) {
+                        case 1:
+                            // Your code for AC and Appliances Repair service
+                            System.out.println("AC and Appliances Repair service selected.");
+                            System.out.println("Choose any Option");
+                            System.out.println("1. AC Repair");
+                            System.out.println("2. TV Repair");
+                            System.out.println("3. Friedge Repair");
+                            System.out.println("4. Washing Machine Repair");
+                            
+                            System.out.print("Choose Which service you want : ");
+                            int selectservice1 = scanner.nextInt();scanner.nextLine();
+                            
+                            userinfo(scanner);
+                            
+                            serviceSelected = true;
+                            break;
+                        case 2:
+                            // Your code for House Cleaning service
+                            System.out.println("House Cleaning service selected.");
+                            System.out.println("Choose an Option.");
+                            System.out.println("1. 1 BHK");
+                            System.out.println("2. 2 BHK");
+                            System.out.println("3. 3 BHK");
+                            
+                            
+                            System.out.print("Choose Which service you want : ");
+                            int selectservice2 = scanner.nextInt();scanner.nextLine();
+                            
+                            userinfo(scanner);
+                            
+                            serviceSelected = true;
+                            break;
+                        case 3:
+                            // Your code for Vehicle Repair Services
+                            System.out.println("Vehicle Repair Services selected.");
+                            System.out.println("1. 2 Wheeler");
+                            System.out.println("2. 3 Wheeler");
+                            System.out.println("3. 4 Wheeler");
+                            
+                            System.out.print("Choose Which service you want : ");
+                            int selectservice3 = scanner.nextInt();scanner.nextLine();
+                            
+                            userinfo(scanner);
+                            
+                            serviceSelected = true;
+                            break;
+                        case 4:
+                            // Your code for Product Pickup and Drop service
+                            System.out.println("Product Pickup and Drop service selected.");
+                            System.out.println("1. Furniture");
+                            System.out.println("2. Groceries");
+                            System.out.println("3. Vehicles");
+                            
+                            System.out.print("Choose Which service you want : ");
+                            int selectservice4 = scanner.nextInt();scanner.nextLine();
+                            
+                            userinfo(scanner);
+                            
+                            serviceSelected = true;
+                            break;
+                        case 5:
+                            loggedIn = false;
+                            System.out.println("Logged out successfully!");
+                            break;
+                        default:
+                            System.out.println("Invalid option. Please choose again.");
+                    }
+                } else {
+                    System.out.println("Choose an option:");
+                    System.out.println("1. Logout");
+
+                    int option = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
+
+                    switch (option) {
+                        case 1:
+                            loggedIn = false;
+                            serviceSelected = false;
+                            System.out.println("Logged out successfully!");
+                            break;
+                        default:
+                            System.out.println("Invalid option. Please choose again.");
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    public static void userinfo(Scanner scanner)
+    {
+        String[][] registrations = new String[10][4]; // Assuming maximum 10 registrations
+        int count = 0; // To keep track of the number of registrations
+
+        while (true) {
+            System.out.print("Enter Date (MM/DD/YYYY) or type 'done' to finish: ");
+            String date = scanner.nextLine();
+            if (date.equalsIgnoreCase("done")) {
+                break; // Break the loop if 'done' is entered
+            }
+
+            System.out.print("Enter Address (Max 100 characters): ");
+            String address = scanner.nextLine();
+
+            System.out.print("Enter Vendor (vendor1, vendor2, vendor3): ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter Amount: ");
+            String amount = scanner.nextLine();
+
+            registrations[count][0] = date;
+            registrations[count][1] = address;
+            registrations[count][2] = vendor;
+            registrations[count][3] = amount;
+
+            count++;
+        }
+
+        if (count > 0) {
+            System.out.println("\nCustomer Registration Details:");
+            System.out.println("----------------------------------------------");
+            System.out.println("Date\t\tAddress\t\tVendor\t\tAmount");
+            System.out.println("----------------------------------------------");
+            for (int i = 0; i < count; i++) {
+                System.out.printf(
+                        registrations[i][0]+"\t"+registrations[i][1]+"\t"+registrations[i][2]+"\t"+registrations[i][3]);
+                        System.out.println("");
+            }
+            System.out.println("----------------------------------------------");
+
+        } else {
+            System.out.println("No registrations made.");
+        }
+    }
+}
