@@ -28,5 +28,80 @@
             window.location.href = "services.html";
         }
     </script>
+
+    <!--
+    import java.util.Scanner;
+
+public class ConsoleMenu {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+
+        while (!exit) {
+            displayMenu();
+            int choice = getUserChoice(scanner);
+
+            switch (choice) {
+                case 1:
+                    showServicesList();
+                    break;
+                case 2:
+                    showBookingHistory();
+                    break;
+                case 3:
+                    showAccountDetails();
+                    break;
+                case 4:
+                    contactSupport();
+                    break;
+                case 5:
+                    exit = true;
+                    System.out.println("Logging out...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void displayMenu() {
+        System.out.println("\nMenu:");
+        System.out.println("1. Services List");
+        System.out.println("2. Booking History");
+        System.out.println("3. Account Details");
+        System.out.println("4. Contact Support");
+        System.out.println("5. Logout");
+        System.out.print("Enter your choice: ");
+    }
+
+    private static int getUserChoice(Scanner scanner) {
+        return scanner.nextInt();
+    }
+
+    private static void showServicesList() {
+        System.out.println("Displaying Services List...");
+        // Code to display services list
+    }
+
+    private static void showBookingHistory() {
+        System.out.println("Displaying Booking History...");
+        // Code to display booking history
+    }
+
+    private static void showAccountDetails() {
+        System.out.println("Displaying Account Details...");
+        // Code to display account details
+    }
+
+    private static void contactSupport() {
+        System.out.println("Contacting Support...");
+        // Code to contact support
+    }
+}
+    -->
 </body>
 </html>
+
