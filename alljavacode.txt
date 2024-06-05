@@ -62,7 +62,10 @@ public class Main{
 
 
 
-2. login 
+
+
+
+3. services info
 
 
 import java.util.Scanner;
