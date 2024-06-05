@@ -63,3 +63,61 @@ public class Main{
 
 
 2. login 
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[][] registrations = new String[10][4]; // Assuming maximum 10 registrations
+        int count = 0; // To keep track of the number of registrations
+
+        while (true) {
+            System.out.print("Enter Date (MM/DD/YYYY) or type 'done' to finish: ");
+            String date = scanner.nextLine();
+            if (date.equalsIgnoreCase("done")) {
+                break; // Break the loop if 'done' is entered
+            }
+
+            System.out.print("Enter Address (Max 100 characters): ");
+            String address = scanner.nextLine();
+
+            System.out.print("Enter Vendor (vendor1, vendor2, vendor3): ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter Amount: ");
+            String amount = scanner.nextLine();
+
+            registrations[count][0] = date;
+            registrations[count][1] = address;
+            registrations[count][2] = vendor;
+            registrations[count][3] = amount;
+
+            count++;
+        }
+
+        if (count > 0) {
+            System.out.println("\nCustomer Registration Details:");
+            System.out.println("----------------------------------------------");
+            System.out.println("Date\t\tAddress\t\tVendor\t\tAmount");
+            System.out.println("----------------------------------------------");
+            for (int i = 0; i < count; i++) {
+                System.out.printf(
+                        registrations[i][0]+"\t\t\t"+registrations[i][1]+"\t\t\t"+registrations[i][2]+"\t\t\t"+registrations[i][3]);
+                        System.out.println("");
+            }
+            System.out.println("----------------------------------------------");
+
+            System.out.println("\nCustomer Registration is successful");
+        } else {
+            System.out.println("No registrations made.");
+        }
+    }
+}
+
+
+
+3.  services 
