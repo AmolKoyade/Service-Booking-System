@@ -65,6 +65,39 @@ public class Main{
 
 
 
+
+2. login 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        // Prompt for login ID
+        System.out.print("Enter Login ID: ");
+        String loginIdInput = scanner.nextLine();
+
+        // Prompt for password
+        System.out.print("Enter Password: ");
+        String passwordInput = scanner.nextLine();
+
+            System.out.println("\nLogin Successful!");
+    }
+}
+
+
+
+
+
+
+
+
+
 3. services info
 
 
@@ -123,4 +156,3 @@ public class Main {
 
 
 
-3.  services 
