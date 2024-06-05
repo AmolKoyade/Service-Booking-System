@@ -31,3 +31,55 @@
         <script src="registration.js"></script>
     </body>
 </html>
+
+<!--
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class CustomerLogin {
+
+    private static Map<String, String> userDatabase = new HashMap<>();
+    private static final String CUSTOMER_PASSWORD = "password123";  // This would typically be securely stored and hashed
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Generate a random user ID
+        String userId = generateRandomUserId();
+        userDatabase.put(userId, CUSTOMER_PASSWORD);
+
+        System.out.println("Generated User ID: " + userId);
+
+        // Prompt the user to login
+        System.out.print("Enter User ID: ");
+        String inputUserId = scanner.nextLine();
+
+        System.out.print("Enter Password: ");
+        String inputPassword = scanner.nextLine();
+
+        // Validate the login credentials
+        if (validateLogin(inputUserId, inputPassword)) {
+            System.out.println("Customer Login is successful.");
+        } else {
+            System.out.println("Invalid User ID or Password. Login failed.");
+        }
+
+        scanner.close();
+    }
+
+    private static String generateRandomUserId() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(9000) + 1000;  // Generates a random 4-digit number
+        return "CUST" + randomNumber;
+    }
+
+    private static boolean validateLogin(String userId, String password) {
+        if (userDatabase.containsKey(userId) && userDatabase.get(userId).equals(password)) {
+            return true;
+        }
+        return false;
+    }
+}
+-->
